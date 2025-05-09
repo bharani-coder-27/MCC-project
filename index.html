@@ -3,110 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Solar System Animation</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #000;
-      overflow: hidden;
-      height: 100vh;
-      width: 100vw;
-    }
-
-    .universe {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-    }
-
-    .sun {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100px;
-      height: 100px;
-      margin-left: -50px;
-      margin-top: -50px;
-      background: radial-gradient(circle, yellow, orange);
-      border-radius: 50%;
-      box-shadow: 0 0 50px yellow;
-      z-index: 3;
-    }
-
-    .earth-orbit {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 400px;
-      height: 400px;
-      margin-left: -200px;
-      margin-top: -200px;
-      border: 1px dashed rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      animation: rotate-earth 20s linear infinite;
-    }
-
-    .earth {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 50px;
-      height: 50px;
-      margin-left: -25px;
-      background: radial-gradient(circle, #1e90ff, #00008b);
-      border-radius: 50%;
-      box-shadow: 0 0 10px #1e90ff;
-    }
-
-    .moon-orbit {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 100px;
-      height: 100px;
-      margin-left: -50px;
-      margin-top: -25px;
-      border: 1px dashed rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: rotate-moon 5s linear infinite;
-    }
-
-    .moon {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 15px;
-      height: 15px;
-      margin-left: -7.5px;
-      background: radial-gradient(circle, #ccc, #999);
-      border-radius: 50%;
-      box-shadow: 0 0 5px #ccc;
-    }
-
-    @keyframes rotate-earth {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes rotate-moon {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="universe">
+  <div class="solar-system">
     <div class="sun"></div>
-    <div class="earth-orbit">
-      <div class="earth">
+
+    <div class="orbit mercury-orbit">
+      <div class="planet mercury"></div>
+    </div>
+
+    <div class="orbit venus-orbit">
+      <div class="planet venus"></div>
+    </div>
+
+    <div class="orbit earth-orbit">
+      <div class="planet earth">
         <div class="moon-orbit">
           <div class="moon"></div>
         </div>
       </div>
+    </div>
+
+    <div class="orbit mars-orbit">
+      <div class="planet mars"></div>
+    </div>
+
+    <div class="orbit jupiter-orbit">
+      <div class="planet jupiter"></div>
+    </div>
+
+    <div class="orbit saturn-orbit">
+      <div class="planet saturn"></div>
+    </div>
+
+    <div class="orbit uranus-orbit">
+      <div class="planet uranus"></div>
+    </div>
+
+    <div class="orbit neptune-orbit">
+      <div class="planet neptune"></div>
     </div>
   </div>
 </body>
