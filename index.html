@@ -1,44 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My AWS S3 Static Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(45deg, #ff758c, #ff7eb3, #ff85a2);
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .content {
-            margin-top: 50px;
-            font-size: 20px;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Solar System Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .universe {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .sun {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      margin-left: -50px;
+      margin-top: -50px;
+      background: radial-gradient(circle, yellow, orange);
+      border-radius: 50%;
+      box-shadow: 0 0 50px yellow;
+      z-index: 3;
+    }
+
+    .earth-orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      margin-left: -200px;
+      margin-top: -200px;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: rotate-earth 20s linear infinite;
+    }
+
+    .earth {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50px;
+      height: 50px;
+      margin-left: -25px;
+      background: radial-gradient(circle, #1e90ff, #00008b);
+      border-radius: 50%;
+      box-shadow: 0 0 10px #1e90ff;
+    }
+
+    .moon-orbit {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      margin-left: -50px;
+      margin-top: -25px;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: rotate-moon 5s linear infinite;
+    }
+
+    .moon {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      margin-left: -7.5px;
+      background: radial-gradient(circle, #ccc, #999);
+      border-radius: 50%;
+      box-shadow: 0 0 5px #ccc;
+    }
+
+    @keyframes rotate-earth {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes rotate-moon {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-    <header>Welcome to My AWS S3 Hosted Website</header>
-    <div class="content">
-        <p>This is a static website hosted on Amazon S3.</p>
-        <p>You can use AWS S3 to host your website easily!</p>
+  <div class="universe">
+    <div class="sun"></div>
+    <div class="earth-orbit">
+      <div class="earth">
+        <div class="moon-orbit">
+          <div class="moon"></div>
+        </div>
+      </div>
     </div>
-    <footer>&copy; 2025 My Website | Hosted on AWS S3</footer>
+  </div>
 </body>
 </html>
